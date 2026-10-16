@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>REELIX - Agregar contenido</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/fx.js"></script>
+</head>
+
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+
+        <div class="logo">
+            REELIX
+        </div>
+
+        <div class="nav-links">
+            <a href="catalogo.html">Mi catálogo</a>
+            <a href="ver-mas-tarde.html">Ver más tarde</a>
+            <a href="agregar.html" class="add-btn">+ Agregar</a>
+            <a href="#" class="nav-user">Usuario</a>
+            <a href="index.html">Salir</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Formulario -->
+    <main class="form-container">
+
+        <div class="form-header">
+            <h1>Agregar contenido</h1>
+
+            <p>
+                Agregá una nueva película o serie a tu catálogo.
+            </p>
+        </div>
+
+
+        <form id="form-agregar">
+
+            <!-- Título -->
+            <div class="form-group">
+
+                <label for="titulo">
+                    Título
+                </label>
+
+                <input
+                    type="text"
+                    id="titulo"
+                    placeholder="Ej: Interestelar"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Tipo -->
+            <div class="form-group">
+
+                <label for="tipo">
+                    Tipo
+                </label>
+
+                <select id="tipo" required>
+
+                    <option value="">
+                        Seleccionar tipo
+                    </option>
+
+                    <option value="Película">
+                        Película
+                    </option>
+
+                    <option value="Serie">
+                        Serie
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Año -->
+            <div class="form-group">
+
+                <label for="anio">
+                    Año
+                </label>
+
+                <input
+                    type="number"
+                    id="anio"
+                    placeholder="Ej: 2014"
+                    min="1900"
+                    max="2100"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Género -->
+            <div class="form-group">
+
+                <label for="genero">
+                    Género
+                </label>
+
+                <select id="genero" required>
+
+                    <option value="">
+                        Seleccionar género
+                    </option>
+
+                    <option value="Acción">
+                        Acción
+                    </option>
+
+                    <option value="Comedia">
+                        Comedia
+                    </option>
+
+                    <option value="Drama">
+                        Drama
+                    </option>
+
+                    <option value="Terror">
+                        Terror
+                    </option>
+
+                    <option value="Ciencia ficción">
+                        Ciencia ficción
+                    </option>
+
+                    <option value="Romance">
+                        Romance
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Duración -->
+            <div class="form-group">
+
+                <label for="duracion">
+                    Duración
+                </label>
+
+                <input
+                    type="text"
+                    id="duracion"
+                    placeholder="Ej: 169 min"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Calificación -->
+            <div class="form-group">
+
+                <label for="calificacion">
+                    Calificación
+                </label>
+
+                <input
+                    type="number"
+                    id="calificacion"
+                    placeholder="Ej: 8.7"
+                    min="0"
+                    max="10"
+                    step="0.1"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Imagen -->
+            <div class="form-group">
+
+                <label for="imagen">
+                    URL del poster
+                </label>
+
+                <input
+                    type="url"
+                    id="imagen"
+                    placeholder="https://..."
+                    required
+                >
+
+            </div>
+
+
+            <!-- Sinopsis -->
+            <div class="form-group">
+
+                <label for="sinopsis">
+                    Sinopsis
+                </label>
+
+                <textarea
+                    id="sinopsis"
+                    rows="5"
+                    placeholder="Escribí una breve descripción..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- Botones -->
+            <div class="form-buttons">
+
+                <a href="catalogo.html" class="cancel-btn">
+                    Cancelar
+                </a>
+
+                <button type="submit" class="primary-btn">
+                    Agregar contenido
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+
+    <script type="module" src="js/agregar.js"></script>
+
+</body>
+</html>

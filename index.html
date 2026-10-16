@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reelix - Iniciar sesión</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/fx.js"></script>
+</head>
+
+<script type="module" src="js/login.js"></script>
+
+<body>
+
+    <main class="login-page">
+
+        <section class="login-container">
+
+            <div class="brand">
+                <h1>REELIX</h1>
+                <p>Tu cine, organizado.</p>
+            </div>
+
+            <div class="login-box">
+
+                <h2>Iniciar sesión</h2>
+                <p class="login-description">
+                    Ingresá a tu cuenta para continuar
+                </p>
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+                        <label for="usuario">Usuario</label>
+                        <input 
+                            type="text" 
+                            id="usuario" 
+                            name="usuario"
+                            placeholder="Ingresá tu usuario"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Contraseña</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password"
+                            placeholder="Ingresá tu contraseña"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Ingresar
+                    </button>
+
+                </form>
+
+                <div class="register-link">
+                    <p>
+                        ¿No tenés una cuenta?
+                        <a href="registro.html">Registrate</a>
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
