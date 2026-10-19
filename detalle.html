@@ -16,6 +16,7 @@
 
 <body>
 
+    <!-- Barra de navegación -->
     <nav class="navbar">
 
         <div class="logo">
@@ -27,21 +28,28 @@
             <a href="ver-mas-tarde.html">Ver más tarde</a>
             <a href="agregar.html" class="add-btn">+ Agregar</a>
             <a href="#" class="nav-user">Usuario</a>
-            <a href="index.html">Salir</a>
+
+            <a
+                href="php/logout.php"
+                onclick="localStorage.removeItem('reelix_usuario_actual')"
+            >
+                Salir
+            </a>
         </div>
 
     </nav>
 
 
+    <!-- Detalle del contenido -->
     <main class="detail-container">
 
         <a href="catalogo.html" class="back-link">
             ← Volver al catálogo
         </a>
 
-
         <section class="detail-content">
 
+            <!-- Poster -->
             <div class="detail-poster">
 
                 <img
@@ -53,6 +61,7 @@
             </div>
 
 
+            <!-- Información -->
             <div class="detail-info">
 
                 <span id="detalle-tipo" class="detail-type">
@@ -63,40 +72,29 @@
                     Título
                 </h1>
 
-
                 <div class="detail-meta">
 
-                    <span id="detalle-anio">
-                        Año
-                    </span>
+                    <span id="detalle-anio">Año</span>
 
                     <span>•</span>
 
-                    <span id="detalle-genero">
-                        Género
-                    </span>
+                    <span id="detalle-genero">Género</span>
 
                     <span>•</span>
 
-                    <span id="detalle-duracion">
-                        Duración
-                    </span>
+                    <span id="detalle-duracion">Duración</span>
 
                 </div>
-
 
                 <div class="detail-rating">
 
                     ⭐
 
-                    <span id="detalle-calificacion">
-                        0
-                    </span>
+                    <span id="detalle-calificacion">0</span>
 
                     / 10
 
                 </div>
-
 
                 <h2>Sinopsis</h2>
 
@@ -105,11 +103,14 @@
                 </p>
 
 
+                <!-- Acciones disponibles solamente para contenidos propios -->
                 <div class="detail-actions">
 
                     <a
+                        id="btn-editar"
                         href="editar.html"
                         class="primary-btn"
+                        style="display: none !important;"
                     >
                         Editar
                     </a>
@@ -118,6 +119,7 @@
                         id="btn-eliminar"
                         class="delete-btn"
                         type="button"
+                        style="display: none !important;"
                     >
                         Eliminar
                     </button>
@@ -131,6 +133,7 @@
     </main>
 
 
+    <!-- JavaScript del detalle -->
     <script type="module" src="js/detalle.js"></script>
 
 </body>

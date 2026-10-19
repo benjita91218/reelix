@@ -1,3 +1,7 @@
+/* =====================================================================
+   REELIX · Sistema de diseño v3 — oscuro, violeta, moderno
+   Display: Syne · UI: Manrope. Movimiento en js/fx.js
+   ===================================================================== */
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap");
 
 :root {
@@ -37,7 +41,7 @@ img { max-width: 100%; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: #2c2c38; border: 3px solid var(--bg); border-radius: 8px; }
 
-
+/* ============================ CAPA DE EFECTOS ============================ */
 html.fx:not(.ready)::before { content: ""; position: fixed; inset: 0; z-index: 20000; background: #0a0a10; }
 
 .bg-fx { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
@@ -54,7 +58,7 @@ html.fx:not(.ready)::before { content: ""; position: fixed; inset: 0; z-index: 2
 
 .scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 9995; background: linear-gradient(90deg, #6d28d9, #a78bfa, #e879f9); transform-origin: left; transform: scaleX(0); pointer-events: none; }
 
-
+/* cortina */
 .curtain { position: fixed; inset: 0; z-index: 10001; display: flex; pointer-events: none; }
 .curtain.closing { pointer-events: all; }
 .curtain.gone { visibility: hidden; }
@@ -80,7 +84,7 @@ html.fx:not(.ready)::before { content: ""; position: fixed; inset: 0; z-index: 2
 .to-top .arrow { transition: transform .35s var(--ease); }
 .to-top:hover .arrow { transform: translateY(-3px); }
 
-
+/* revelado 3D */
 [data-reveal] { opacity: 0; transform: perspective(1000px) translate3d(0, 44px, -70px) rotateX(10deg); transform-origin: 50% 100%; transition: opacity .8s var(--ease), transform 1s var(--ease), translate 1s var(--ease), scale 1s var(--ease); transition-delay: calc(var(--d, 0) * 1ms); }
 [data-reveal].in { opacity: 1; transform: none; }
 [data-reveal="flat"] { transform: none; translate: 0 36px; scale: .97; transition: opacity .8s var(--ease), translate 1s var(--ease), scale 1s var(--ease); transition-delay: calc(var(--d, 0) * 1ms); }
@@ -90,7 +94,7 @@ html.fx:not(.ready)::before { content: ""; position: fixed; inset: 0; z-index: 2
 .split.in .wi { opacity: 1; transform: none; }
 .split .wi.accent { background: linear-gradient(100deg, #c4b5fd, #8b5cf6 55%, #e879f9); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
-
+/* ============================ BARRA SUPERIOR ============================ */
 .navbar { position: fixed; z-index: 100; top: 0; left: 0; right: 0; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 max(20px, calc((100% - var(--wrap)) / 2 + 24px)); background: rgba(9, 9, 13, .7); -webkit-backdrop-filter: blur(20px) saturate(160%); backdrop-filter: blur(20px) saturate(160%); border-bottom: 1px solid rgba(255, 255, 255, .06); transition: transform .55s var(--ease), opacity .6s ease, background .3s ease; }
 .navbar::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: linear-gradient(90deg, transparent, rgba(167, 139, 250, .55), transparent); opacity: 0; transition: opacity .4s ease; }
 .navbar.scrolled { background: rgba(9, 9, 13, .86); }
@@ -119,7 +123,7 @@ html.fx:not(.go) .navbar { opacity: 0; transform: translateY(-100%); }
 :is(a, button):hover .roll-a { transform: translateY(-105%); }
 :is(a, button):hover .roll-b { transform: translateY(0); }
 
-
+/* ============================== BOTONES ============================== */
 .btn-primary, .primary-btn, .add-btn, .cancel-btn, .delete-btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; border-radius: 999px; font: 700 14.5px/1 var(--font); text-decoration: none; white-space: nowrap; cursor: pointer; transition: box-shadow .45s var(--ease), background-color .25s ease, color .25s ease, translate .4s var(--ease), transform .25s var(--ease); }
 .btn-primary, .primary-btn, .add-btn { color: #fff; background: var(--grad); box-shadow: 0 0 0 1px rgba(255, 255, 255, .16) inset, 0 14px 30px -14px rgba(124, 58, 237, .95); }
 .btn-primary:hover, .primary-btn:hover, .add-btn:hover { box-shadow: 0 0 0 1px rgba(255, 255, 255, .3) inset, 0 18px 40px -12px rgba(139, 92, 246, 1); }
@@ -136,7 +140,7 @@ html.fx:not(.go) .navbar { opacity: 0; transform: translateY(-100%); }
 .ripple { position: absolute; z-index: -1; border-radius: 50%; background: rgba(255, 255, 255, .3); transform: scale(0); animation: ripple .75s var(--ease) forwards; pointer-events: none; }
 @keyframes ripple { to { transform: scale(1); opacity: 0; } }
 
-
+/* ============================== CAMPOS ============================== */
 .input-group input, .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px 16px; font: 500 15.5px/1.4 var(--font); color: #fff; background-color: rgba(255, 255, 255, .04); border: 1px solid var(--line); border-radius: 14px; outline: none; transition: border-color .25s ease, box-shadow .35s var(--ease), background-color .25s ease; }
 .input-group input:hover, .form-group input:hover, .form-group select:hover, .form-group textarea:hover { border-color: var(--line-2); }
 .input-group input:focus, .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--violet); background-color: rgba(139, 92, 246, .07); box-shadow: 0 0 0 4px rgba(139, 92, 246, .18); }
@@ -159,7 +163,7 @@ textarea { resize: vertical; min-height: 140px; line-height: 1.6 !important; }
 .pw-toggle.on .eye { display: none; }
 .input-group:has(.pw-toggle) input { padding-right: 52px; }
 
-
+/* ============================ LOGIN / REGISTRO ============================ */
 .login-page { position: relative; isolation: isolate; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 48px 20px; }
 .login-container { width: 100%; max-width: 430px; }
 .brand { text-align: center; margin-bottom: 26px; }
@@ -182,7 +186,7 @@ textarea { resize: vertical; min-height: 140px; line-height: 1.6 !important; }
 @keyframes hintOut { to { opacity: 0; } }
 @keyframes pulse { 50% { opacity: .35; transform: scale(.7); } }
 
-
+/* ============================ TÚNEL 3D ============================ */
 .void-bg { position: fixed; inset: 0; z-index: -3; background: radial-gradient(ellipse 90% 60% at 50% -10%, #1d1233 0%, #09080f 58%, #040406 100%); pointer-events: none; }
 .tunnel-scene { position: fixed; inset: 0; z-index: -2; perspective: 900px; overflow: hidden; pointer-events: none; animation: tunnelIn 2s ease both; }
 @keyframes tunnelIn { from { opacity: 0; } to { opacity: 1; } }
@@ -201,7 +205,7 @@ textarea { resize: vertical; min-height: 140px; line-height: 1.6 !important; }
 @keyframes railMove { from { background-position: 260px 0; } to { background-position: 0 0; } }
 .tunnel-fog { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse 40% 36% at 50% 50%, rgba(18, 8, 40, .97) 0%, rgba(10, 6, 22, .72) 50%, transparent 100%), radial-gradient(ellipse at 50% 50%, transparent 50%, rgba(0, 0, 0, .7) 100%); }
 
-
+/* ============================ CATÁLOGO ============================ */
 .catalog-container { max-width: var(--wrap); margin: 0 auto; padding: calc(var(--nav-h) + 40px) 24px 40px; }
 .catalog-header { margin-bottom: 26px; transform-origin: 50% 0%; }
 .catalog-header h1 { font-size: clamp(36px, 6vw, 68px); font-weight: 800; line-height: 1.02; letter-spacing: -.01em; }
@@ -228,7 +232,7 @@ textarea { resize: vertical; min-height: 140px; line-height: 1.6 !important; }
 .filters select:hover { background-color: var(--surface-2); }
 .filters select:focus { border-color: var(--violet); }
 
-
+/* hero destacado */
 .hero { position: relative; display: grid; grid-template-columns: 1fr minmax(180px, 270px); align-items: center; gap: 30px; min-height: 340px; margin-bottom: 44px; padding: clamp(22px, 4vw, 44px); border-radius: 28px; overflow: hidden; isolation: isolate; border: 1px solid var(--line); background: #100d1a; }
 .hero .hero-bg { position: absolute; inset: -12%; z-index: -2; background-size: cover; background-position: center 20%; filter: blur(34px) saturate(1.5) brightness(.6); transform: scale(1.1); will-change: transform; }
 .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, rgba(9, 9, 13, .92) 10%, rgba(9, 9, 13, .35) 70%, rgba(9, 9, 13, .15)); }
@@ -279,7 +283,7 @@ textarea { resize: vertical; min-height: 140px; line-height: 1.6 !important; }
 .sin-contenido::before { content: ""; display: block; width: 58px; height: 58px; margin: 0 auto 16px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='3'/%3E%3Cpath d='M7 3v18M17 3v18M3 8h4M3 12h4M3 16h4M17 8h4M17 12h4M17 16h4'/%3E%3C/svg%3E") center / contain no-repeat; animation: bob 4s ease-in-out infinite; }
 @keyframes bob { 50% { translate: 0 -8px; } }
 
-
+/* ============================ DETALLE ============================ */
 .detail-container { max-width: 1200px; margin: 0 auto; padding: calc(var(--nav-h) + 36px) 24px 60px; }
 .detail-content.pending { opacity: 0; }
 .back-link { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; padding: 9px 18px 9px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: #d6d6e2; font-size: 14px; font-weight: 600; text-decoration: none; transition: color .25s ease, border-color .25s ease, background .25s ease, translate .4s var(--ease); }
@@ -317,7 +321,7 @@ textarea { resize: vertical; min-height: 140px; line-height: 1.6 !important; }
 .providers-attr { margin-top: 10px; color: var(--dim); font-size: 11.5px; }
 .providers-attr a { color: var(--dim); text-decoration: underline; text-underline-offset: 2px; }
 
-
+/* ============================ FORMULARIOS ============================ */
 .form-container { max-width: 840px; margin: 0 auto; padding: calc(var(--nav-h) + 40px) 24px 40px; }
 .form-header, .form-container > h1 { transform-origin: 50% 0%; }
 .form-container h1 { font-size: clamp(36px, 5.6vw, 64px); font-weight: 800; line-height: 1.04; }
@@ -327,7 +331,7 @@ textarea { resize: vertical; min-height: 140px; line-height: 1.6 !important; }
 .form-group:has(#titulo), .form-group:has(#sinopsis) { grid-column: 1 / -1; }
 .form-buttons { grid-column: 1 / -1; display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 10px; margin-top: 4px; padding-top: 24px; border-top: 1px solid var(--line); }
 
-
+/* ============================ FOOTER ============================ */
 .site-footer { position: relative; margin-top: 70px; padding: 56px 24px 36px; text-align: center; border-top: 1px solid var(--line); background: linear-gradient(180deg, transparent, rgba(124, 58, 237, .07)); }
 .site-footer::before { content: ""; position: absolute; left: 20%; right: 20%; top: -1px; height: 1px; background: linear-gradient(90deg, transparent, var(--violet-h), transparent); }
 .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 22px; max-width: var(--wrap); margin: 0 auto; }
@@ -336,7 +340,7 @@ textarea { resize: vertical; min-height: 140px; line-height: 1.6 !important; }
 .footer-links a:hover { color: #fff; background: rgba(139, 92, 246, .16); border-color: rgba(167, 139, 250, .5); }
 .footer-copy { color: var(--dim); font-size: 13px; }
 
-
+/* ============================ RESPONSIVE ============================ */
 @media (max-width: 960px) { .nav-links a { padding: 0 11px; font-size: 13px; } .nav-links a.add-btn { padding: 0 14px; } }
 @media (max-width: 900px) {
     .detail-content { grid-template-columns: 1fr; gap: 32px; }

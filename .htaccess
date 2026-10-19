@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /reelix/
+
+RewriteRule ^catalogo\.html$ /reelix/catalogo.php [R=302,L,NC]
+RewriteRule ^detalle\.html$ /reelix/detalle.php [R=302,L,NC]
+RewriteRule ^agregar\.html$ /reelix/agregar.php [R=302,L,NC]
+RewriteRule ^editar\.html$ /reelix/editar.php [R=302,L,NC]
+RewriteRule ^ver-mas-tarde\.html$ /reelix/ver-mas-tarde.php [R=302,L,NC]

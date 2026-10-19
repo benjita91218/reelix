@@ -1,14 +1,19 @@
 import { obtenerContenidoPorId } from "./storage.js";
 import { actualizarContenido } from "./crud.js";
+
 const idGuardado = localStorage.getItem("reelix_contenido_seleccionado");
+
 if (!idGuardado) {
     window.location.href = "catalogo.html";
 } else {
+
     const id = Number(idGuardado);
     const contenido = obtenerContenidoPorId(id);
+
     if (!contenido) {
         window.location.href = "catalogo.html";
     } else {
+
         const titulo = document.getElementById("titulo") as HTMLInputElement;
         const tipo = document.getElementById("tipo") as HTMLSelectElement;
         const anio = document.getElementById("anio") as HTMLInputElement;
@@ -18,6 +23,8 @@ if (!idGuardado) {
         const imagen = document.getElementById("imagen") as HTMLInputElement;
         const sinopsis = document.getElementById("sinopsis") as HTMLTextAreaElement;
         const formulario = document.getElementById("form-editar") as HTMLFormElement;
+
+        // Cargar los datos actuales
         titulo.value = contenido.titulo;
         tipo.value = contenido.tipo;
         anio.value = contenido.anio.toString();
@@ -26,8 +33,12 @@ if (!idGuardado) {
         calificacion.value = contenido.calificacion.toString();
         imagen.value = contenido.imagen;
         sinopsis.value = contenido.sinopsis;
+
+        // Guardar cambios
         formulario.addEventListener("submit", (evento) => {
+
             evento.preventDefault();
+
             contenido.titulo = titulo.value.trim();
             contenido.tipo = tipo.value;
             contenido.anio = Number(anio.value);
@@ -36,8 +47,11 @@ if (!idGuardado) {
             contenido.calificacion = Number(calificacion.value);
             contenido.imagen = imagen.value.trim();
             contenido.sinopsis = sinopsis.value.trim();
+
             actualizarContenido(contenido);
+
             alert("¡Contenido actualizado correctamente!");
+
             window.location.href = "detalle.html";
         });
     }

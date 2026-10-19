@@ -1,0 +1,24 @@
+﻿# Dependencias
+node_modules/
+**/node_modules/
+
+# Configuración de editores
+.vs/
+**/.vs/
+.vscode/
+
+# Credenciales y variables de entorno
+.env
+.env.*
+
+# Respaldos y exportaciones de base de datos
+*.sql
+*.zip
+
+# Archivos temporales del sistema
+Thumbs.db
+Desktop.ini
+*.log
+
+# Archivos temporales de revisión
+js-revision/

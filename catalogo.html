@@ -17,6 +17,7 @@
 
 <body>
 
+    <!-- Barra de navegación -->
     <nav class="navbar">
 
         <div class="logo">
@@ -28,17 +29,24 @@
             <a href="ver-mas-tarde.html">Ver más tarde</a>
             <a href="agregar.html" class="add-btn">+ Agregar</a>
             <a href="#" class="nav-user">Usuario</a>
-            <a href="index.html">Salir</a>
+
+            <a
+                href="php/logout.php"
+                onclick="localStorage.removeItem('reelix_usuario_actual')"
+            >
+                Salir
+            </a>
         </div>
 
     </nav>
 
 
+    <!-- Contenido principal -->
     <main class="catalog-container">
 
         <div class="catalog-header">
             <div>
-                <h1>Que vas a ver hoy?</h1>
+                <h1>¿Qué vas a ver hoy?</h1>
 
                 <p>
                     Explorá y organizá tus películas y series favoritas.
@@ -47,15 +55,19 @@
         </div>
 
 
+        <!-- Buscador -->
         <div class="search-container">
+
             <input
                 type="text"
                 id="buscador"
                 placeholder="Buscar película o serie..."
             >
+
         </div>
 
 
+        <!-- Filtros -->
         <div class="filters">
 
             <select id="filtro-genero">
@@ -111,11 +123,17 @@
         </div>
 
 
-        <section class="catalog-grid" id="catalogo">
+        <!-- Catálogo de películas y series -->
+        <section
+            class="catalog-grid"
+            id="catalogo"
+        >
         </section>
 
     </main>
 
+
+    <!-- JavaScript del catálogo -->
     <script type="module" src="js/catalogo.js"></script>
 
 </body>

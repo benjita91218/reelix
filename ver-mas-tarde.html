@@ -17,6 +17,7 @@
 
 <body>
 
+    <!-- Barra de navegación -->
     <nav class="navbar">
 
         <div class="logo">
@@ -28,12 +29,19 @@
             <a href="ver-mas-tarde.html">Ver más tarde</a>
             <a href="agregar.html" class="add-btn">+ Agregar</a>
             <a href="#" class="nav-user">Usuario</a>
-            <a href="index.html">Salir</a>
+
+            <a
+                href="php/logout.php"
+                onclick="localStorage.removeItem('reelix_usuario_actual')"
+            >
+                Salir
+            </a>
         </div>
 
     </nav>
 
 
+    <!-- Lista de contenidos guardados -->
     <main class="catalog-container">
 
         <div class="catalog-header">
@@ -58,6 +66,8 @@
 
     </main>
 
+
+    <!-- JavaScript de la lista -->
     <script type="module" src="js/ver-mas-tarde.js"></script>
 
 </body>

@@ -1,0 +1,127 @@
+
+<?php
+require_once __DIR__ . "/php/proteger.php";
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>REELIX - Catálogo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/fx.js"></script>
+</head>
+
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+
+        <div class="logo">
+            REELIX
+        </div>
+
+        <div class="nav-links">
+            <a href="catalogo.php">Mi catálogo</a>
+            <a href="ver-mas-tarde.html">Ver más tarde</a>
+            <a href="agregar.html" class="add-btn">+ Agregar</a>
+            <a href="#" class="nav-user">Usuario</a>
+
+            <a
+                href="php/logout.php"
+                onclick="localStorage.removeItem('reelix_usuario_actual')"
+            >
+                Salir
+            </a>
+        </div>
+
+    </nav>
+
+    <main class="catalog-container">
+
+        <div class="catalog-header">
+            <div>
+                <h1>¿Qué vas a ver hoy?</h1>
+
+                <p>
+                    Explorá y organizá tus películas y series favoritas.
+                </p>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <input
+                type="text"
+                id="buscador"
+                placeholder="Buscar película o serie..."
+            >
+        </div>
+
+        <div class="filters">
+
+            <select id="filtro-genero">
+                <option value="">Todos los géneros</option>
+                <option value="28">Acción</option>
+                <option value="35">Comedia</option>
+                <option value="18">Drama</option>
+                <option value="27">Terror</option>
+                <option value="878">Ciencia ficción</option>
+                <option value="10749">Romance</option>
+            </select>
+
+            <select id="filtro-tipo">
+                <option value="">Películas y series</option>
+                <option value="movie">Películas</option>
+                <option value="tv">Series</option>
+            </select>
+
+            <select id="filtro-anio">
+                <option value="">Todos los años</option>
+                <option value="2027">2027</option>
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2000-2009">2000 - 2009</option>
+                <option value="1990-1999">1990 - 1999</option>
+                <option value="1980-1989">1980 - 1989</option>
+                <option value="1970-1979">1970 - 1979</option>
+            </select>
+
+            <select id="filtro-rating">
+                <option value="">Todas las calificaciones</option>
+                <option value="9">9 o más</option>
+                <option value="8">8 o más</option>
+                <option value="7">7 o más</option>
+                <option value="6">6 o más</option>
+            </select>
+
+        </div>
+
+        <section class="catalog-grid" id="catalogo"></section>
+
+    </main>
+
+    <script type="module" src="js/catalogo.js"></script>
+
+</body>
+</html>

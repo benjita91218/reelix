@@ -5,13 +5,19 @@ import {
     editarContenido,
     eliminarContenido
 } from "./storage.js";
+
+// Generar un ID único para cada contenido
 export function generarId(): number {
     const contenidos = obtenerContenidos();
+
     if (contenidos.length === 0) {
         return 1;
     }
+
     return Math.max(...contenidos.map(contenido => contenido.id)) + 1;
 }
+
+// Crear un nuevo contenido
 export function crearContenido(
     titulo: string,
     tipo: string,
@@ -22,6 +28,7 @@ export function crearContenido(
     sinopsis: string,
     imagen: string
 ): void {
+
     const nuevoContenido: Contenido = {
         id: generarId(),
         titulo,
@@ -33,11 +40,16 @@ export function crearContenido(
         sinopsis,
         imagen
     };
+
     agregarContenido(nuevoContenido);
 }
+
+// Actualizar un contenido existente
 export function actualizarContenido(contenido: Contenido): void {
     editarContenido(contenido);
 }
+
+// Borrar un contenido
 export function borrarContenido(id: number): void {
     eliminarContenido(id);
 }

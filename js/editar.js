@@ -20,6 +20,7 @@ else {
         const imagen = document.getElementById("imagen");
         const sinopsis = document.getElementById("sinopsis");
         const formulario = document.getElementById("form-editar");
+        // Cargar los datos actuales
         titulo.value = contenido.titulo;
         tipo.value = contenido.tipo;
         anio.value = contenido.anio.toString();
@@ -28,6 +29,7 @@ else {
         calificacion.value = contenido.calificacion.toString();
         imagen.value = contenido.imagen;
         sinopsis.value = contenido.sinopsis;
+        // Guardar cambios
         formulario.addEventListener("submit", (evento) => {
             evento.preventDefault();
             contenido.titulo = titulo.value.trim();
